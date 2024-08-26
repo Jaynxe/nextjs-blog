@@ -31,7 +31,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${page.title} - Xie An`,
+    title: `${page.title} - Jaynxe`,
     description: page.description,
   }
 }

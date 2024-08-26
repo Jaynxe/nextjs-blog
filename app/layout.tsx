@@ -5,7 +5,7 @@ import ClientRootLayout from "@/components/clientRootLayout"; // 引入客户端
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Xie An",
+  title: "Jaynxe",
   description: "Record my wonderful life",
 };
 
