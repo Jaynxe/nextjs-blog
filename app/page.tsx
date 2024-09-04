@@ -1,3 +1,4 @@
+/* 首页 */
 import { allPosts } from "@/.contentlayer/generated"
 import Link from "next/link"
 import { formatDate } from '@/app/utils'

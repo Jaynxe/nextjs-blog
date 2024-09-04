@@ -1,3 +1,4 @@
+/* 文章详情页 */
 import { notFound } from "next/navigation"
 import { allPosts } from "contentlayer/generated"
 
@@ -49,6 +50,10 @@ export default async function PostPage({ params }: PostProps) {
   if (!post) {
     notFound()
   }
+  const wordCount = post.body.raw.split(/\s+/).filter((word) => word !== "").length;
+
+  const readingSpeed = 200;
+  const readingTime = Math.ceil(wordCount / readingSpeed); // 向上取整
 
   return (
     <article className="py-6 prose dark:prose-invert">
@@ -59,7 +64,7 @@ export default async function PostPage({ params }: PostProps) {
         </p>
       )}
       <p className="text-sm text-gray-500 dark:text-gray-400">
-        {formatDate(post.date)}
+        {formatDate(post.date)} • {wordCount} words • {readingTime} min read
       </p>
       <hr className="my-4" />
       <Mdx code={post.body.code} />
