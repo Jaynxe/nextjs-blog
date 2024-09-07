@@ -50,7 +50,16 @@ export default async function PostPage({ params }: PostProps) {
   if (!post) {
     notFound()
   }
-  const wordCount = post.body.raw.split(/\s+/).filter((word) => word !== "").length;
+
+
+  const wordCount = post.body.raw
+    .trim()
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/([^\x00-\xff])/g, " $1 ") // 将中文字符与其他字符间添加空格
+    .split(/\s+/) // 以空白字符分割
+    .filter((word) => word !== "") // 过滤空字符串
+    .length;
+
 
   const readingSpeed = 200;
   const readingTime = Math.ceil(wordCount / readingSpeed); // 向上取整

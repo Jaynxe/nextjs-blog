@@ -16,9 +16,13 @@ export default function RuntimeDisplay() {
       const now = dayjs();
       const diff = dayjs.duration(now.diff(launchTime));
 
-      // 格式化为 年月日时分秒
+      const totalDays = Math.floor(diff.asDays());
+      const hours = diff.hours();
+      const minutes = diff.minutes();
+      const seconds = diff.seconds();
+
       setRuntime(
-        `${diff.years()} 年 ${diff.months()} 月 ${diff.days()} 日 ${diff.hours()} 时 ${diff.minutes()} 分 ${diff.seconds()} 秒`
+        `本站已运行: ${totalDays}天${hours}小时${minutes}分${seconds}秒`
       );
     };
 
