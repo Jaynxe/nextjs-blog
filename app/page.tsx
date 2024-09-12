@@ -12,7 +12,7 @@ export default function Home() {
   });
 
   return (
-    <div className="prose dark:prose-invert mx-auto pb-10">
+    <div className="prose dark:prose-invert pb-10">
       {sortedPosts.map((post) => (
         <article key={post._id} className="mb-8">
           <Link href={post.slug} className="no-underline">
