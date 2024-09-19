@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: "华文细黑", "SimSun", "微软雅黑", "华文楷体", "楷体", "宋体",
-    "Arial", "Helvetica", "sans-serif" !important;
+  font-family: "华文中宋", "微软雅黑", "楷体", "宋体", "Arial", "Helvetica",
+    "sans-serif" !important;
 }
 
 /* 基础滚动条样式 */
